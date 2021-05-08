@@ -6,8 +6,7 @@ case $yn in
 	[Yy]* ) sudo apt-get update
 			sudo apt-get upgrade
 			break;;
-	[Nn]* ) break;;
-	* ) echo "Unexpected input. skip." break;;
+	* ) echo "Unexpected input. skip."
 esac
 
 printf "\e[32m[01/03] Install git-core, build-esseantial and VS Code?(y/N) \e[0m"
@@ -16,8 +15,7 @@ case $yn in
 	[Yy]* ) sudo apt-get install git-core build-essential
 			sudo apt install code
 			break;;
-	[Nn]* ) break;;
-	* ) echo "Unexpected input. skip." break;;
+	* ) echo "Unexpected input. skip."
 esac
 
 # -- git user ---------------------------------------------------------------- #
@@ -33,9 +31,9 @@ printf "\n------------------------------------\nRaspberryPi Device:\n"
 cat /proc/device-tree/model
 printf "\n------------------------------------\nOperating Systym:\n"
 cat /etc/issue
-printf "\n------------------------------------\nKernel:\n"
+printf "------------------------------------\nKernel:\n"
 uname -a
-printf "\n------------------------------------\nLONG_BIT:\n"
+printf "------------------------------------\nLONG_BIT:\n"
 getconf LONG_BIT
-printf "\n------------------------------------\n"
+printf "------------------------------------\n"
 printf "\n* Hello world *\n\n"
