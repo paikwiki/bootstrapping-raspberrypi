@@ -28,7 +28,7 @@ cat /proc/device-tree/model
 printf "\n====================================\nOperating Systym:\n"
 cat /etc/issue
 printf "====================================\nKernel:\n"
-uname =a
+uname -a
 printf "====================================\nLONG_BIT:\n"
 getconf LONG_BIT
 printf "====================================\n"
