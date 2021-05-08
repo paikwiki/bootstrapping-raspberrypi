@@ -1,14 +1,40 @@
 #!/bin/sh
 
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install git-core build-essential
+printf "\e[32m[01/03] Exec apt-get update & upgrade?(y/N) \e[0m"
+read yn
+case $yn in
+	[Yy]* ) sudo apt-get update
+			sudo apt-get upgrade
+			break;;
+	[Nn]* ) break;;
+	* ) echo "Unexpected input. skip." break;;
+esac
 
+printf "\e[32m[01/03] Install git-core, build-esseantial and VS Code?(y/N) \e[0m"
+read yn
+case $yn in
+	[Yy]* ) sudo apt-get install git-core build-essential
+			sudo apt install code
+			break;;
+	[Nn]* ) break;;
+	* ) echo "Unexpected input. skip." break;;
+esac
+
+# -- git user ---------------------------------------------------------------- #
 git config --global user.name "paikwiki"
 git config --global user.email paikwiki@gmail.com
 
-# vs code
-sudo apt install code
-
-# vimrc
+# dotfiles
 cp -n ./srcs/.vimrc ~/.vimrc
+cp ./srcs/.bashrc ~/.bashrc
+
+# Put versions and useful information
+printf "\n------------------------------------\nRaspberryPi Device:\n"
+cat /proc/device-tree/model
+printf "\n------------------------------------\nOperating Systym:\n"
+cat /etc/issue
+printf "\n------------------------------------\nKernel:\n"
+cat uname -a
+printf "\n------------------------------------\nLONG_BIT:\n"
+getconf LONG_BIT
+printf "\n* Hello world *\n\n"
