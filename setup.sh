@@ -34,7 +34,8 @@ cat /proc/device-tree/model
 printf "\n------------------------------------\nOperating Systym:\n"
 cat /etc/issue
 printf "\n------------------------------------\nKernel:\n"
-cat uname -a
+uname -a
 printf "\n------------------------------------\nLONG_BIT:\n"
 getconf LONG_BIT
+printf "\n------------------------------------\n"
 printf "\n* Hello world *\n\n"
