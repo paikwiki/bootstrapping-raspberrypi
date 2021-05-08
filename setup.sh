@@ -5,7 +5,6 @@ read yn
 case $yn in
 	[Yy]* ) sudo apt-get update
 			sudo apt-get upgrade
-			break;;
 esac
 
 printf "\e[32m[01/03] Install git-core, build-esseantial, vim and VS Code?(y/N) \e[0m"
@@ -13,7 +12,6 @@ read yn
 case $yn in
 	[Yy]* ) sudo apt-get install git-core build-essential vim
 			sudo apt install code
-			break;;
 esac
 
 # -- git user ---------------------------------------------------------------- #
