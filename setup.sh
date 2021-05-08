@@ -9,10 +9,10 @@ case $yn in
 	* ) echo "Unexpected input. skip."
 esac
 
-printf "\e[32m[01/03] Install git-core, build-esseantial and VS Code?(y/N) \e[0m"
+printf "\e[32m[01/03] Install git-core, build-esseantial, vim and VS Code?(y/N) \e[0m"
 read yn
 case $yn in
-	[Yy]* ) sudo apt-get install git-core build-essential
+	[Yy]* ) sudo apt-get install git-core build-essential vim
 			sudo apt install code
 			break;;
 	* ) echo "Unexpected input. skip."
