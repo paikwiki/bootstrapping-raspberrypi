@@ -7,11 +7,22 @@ case $yn in
 			sudo apt-get upgrade
 esac
 
-printf "\e[32m[01/03] Install git-core, build-esseantial, vim and VS Code?(y/N) \e[0m"
+printf "\e[32m[01/03] Install git and build-esseantial, Vim(y/N) \e[0m"
 read yn
 case $yn in
-	[Yy]* ) sudo apt-get install git-core build-essential vim
-			sudo apt install code
+	[Yy]* ) sudo apt-get install git build-essential vim
+esac
+
+printf "\e[32m[01/03] Install VS Code?(y/N) \e[0m"
+read yn
+case $yn in
+	[Yy]* ) sudo apt install code
+esac
+
+printf "\e[32m[01/03] Install fonts-unfonts-core and ibus-hangul for Korean?(y/N) \e[0m"
+read yn
+case $yn in
+	[Yy]* ) sudo apt install fonts-unfonts-core ibus-hangul
 esac
 
 # -- git user ---------------------------------------------------------------- #
